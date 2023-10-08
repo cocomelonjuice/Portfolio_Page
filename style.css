@@ -1,0 +1,79 @@
+/*reset css and common styles*/
+*{ 
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+html{
+    font-size: 62.5%;/* 62.5 percentage of DEFAULT FONT SIZE*/
+    /*default font size HTML = 16px =1 rem*/
+}
+
+/*section 1*/
+.section-1{
+    width: 100%;
+    height: 100vh; /*100% of view port*/
+    background:linear-gradient(30deg ,red 10%, orange 20%, yellow 40%, green , blue, 
+    brown, purple );/*mix màu*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-1-heading{
+    font-size: 6em; /*giá trị 1em không phải là 16px default, mà ở đây là
+                    do section-1-heading được chứa bởi thẻ tag ngoài nên 6em ở đây sẽ lấy tương đối 
+                    theo giá trị đơn vị của tag ngoài đó, ở đây do lúc đầu set cho mọi tag trong html 
+                    có font-size là 62.5% so với default font-size nên lúc này 1em = 16px*62.6%*/
+    
+    font-weight: 700; /*thin (100), normal (400), bold (700), and heavy (900) or custom value*/            
+    color: white;
+    background-color: red;
+    padding: 0 3rem;
+    margin:  0 0 5rem 0;
+    text-transform:uppercase;
+    letter-spacing: 1rem;
+    border-bottom: .3rem solid white;
+    text-shadow: .2rem .2rem 1rem yellow;
+    transform: skew(-10deg);
+}
+
+.person-img{
+    width: 25rem;
+    height: 25 rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: .7rem dotted blue;
+    background-color: grey;
+    padding:  .5rem;
+    /*opacity: 0.9*/ 
+}
+
+.person-name{
+    font-size: 2rem;
+    color: white;
+    background-color: teal;
+    margin: 5rem 0;
+    padding: 0.5rem 3rem;
+    letter-spacing: .1rem;
+    transform: skew(-5deg);
+}
+
+.section-1-btn{
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: greenyellow;
+    background-color: red;
+    border: 0.3rem solid black;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
