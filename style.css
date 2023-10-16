@@ -13,6 +13,8 @@
 html{
     font-size: 62.5%;/* 62.5 percentage of DEFAULT FONT SIZE*/
     /*default font size HTML = 16px =1 rem*/
+    scroll-behavior: smooth;
+    
 }
 
 .center{ /* style cho class center để có thể sử dụng lại ở các vị trí khác, ko cần code 
@@ -98,6 +100,13 @@ html{
     height: 4rem;
     background-color: pink;
     box-shadow: 0.2rem 0.2rem 0.5rem #555;
+    position: absolute;
+    z-index: 300;
+}
+
+.sticky{
+  position: fixed;
+  top: 0;
 }
 
 .navbar-link{
@@ -108,6 +117,11 @@ html{
     position: relative;
     transition: color 3s;
     transition: background-color 1s;
+}
+
+
+.change.navbar-link{
+  color:white;
 }
 
 .navbar-link:hover{
@@ -125,6 +139,11 @@ html{
     bottom: -.3rem;
     transition: width 0.7s;
 }
+
+.change.navbar-link::before{
+  width: 130%;
+}
+
 .navbar-link:hover::before{
     width: 130%;
 }
@@ -171,7 +190,7 @@ html{
   }
   
   .progress-percent {
-    width: 90%;
+    width: 0;
     height: 100%;
     background-color: #e41c6f;
     border-radius: 0.3rem;
@@ -225,26 +244,263 @@ html{
 }
 
 .projects-wrapper{
-  width: 80%;
+  width: 90%;
   flex-wrap : wrap;
 }
 
+/*hover effect*/
 .project{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1rem;
+  border-radius: 12px;
   background-color: white;
   box-shadow: 0.3rem .3rem .5rem grey;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.5s; 
 }
 
-.proeject-text{
-  text-align: center;
+.project:hover{
+  box-shadow: 1rem 1rem 1rem lightcyan;
 }
+/*end of hover effect*/
+
+/*hover effect*/
+.project-text{
+  text-align: center;
+  position: absolute;
+  top: -10rem;
+  z-index: 10; /*make the project name go in front of the image*/
+  transition: top 0.4s;
+}
+
+.project:hover .project-text{
+  top: 5rem;
+  transition: top 0.2s 0.2s;
+}
+/*end of hover effect*/
 
 .project-name{
   font-size: 3rem;
   font-weight: 700;
   color: black;
+  text-transform: capitalize;
 }
+
+.project-technologies{
+  font-size: 1.8rem;
+  color: orange;
+}
+
+/*hover effect*/
+.project-image{
+  width: 40rem;
+  /*border-radius: 10px;*/
+  transition: opacity 0.4s;
+}
+
+.project:hover .project-image{
+  opacity: 0.5;
+}
+/*end of hover effect*/
+
+/*hover effect*/
+.project-link{
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+  border: .3rem solid lightcoral;
+  padding: 0 1rem;
+  background-color: white;
+  position:absolute;
+  bottom: -5rem;
+  transition: bottom 0.4s;
+}
+
+.project:hover .project-link{
+  bottom: 5rem;
+  transition: bottom 0.2s 0.2s;
+}
+/*end of hover effect*/
+
+/*section 4*/
+
+.section-4{
+  width: 100%;
+  height: 70vh;
+  background-color: #3b3b3b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.section-4-heading{
+  color: white;
+  box-shadow:none;
+  border-color: white;
+  margin-bottom: 5rem;
+}
+
+.contact-form{
+  width: 50rem;
+  flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea{
+  width: 100%;
+  padding: .5rem;
+  margin: 0.5rem 0;
+  background-color: white;
+  font-size: 1.5rem;
+  border: 0.2rem solid lightcoral;
+  color: grey;
+}
+
+.contact-form textarea{
+  height: 10rem;
+  max-height: 15rem;
+  max-width: 100%;
+}
+
+.contact-form .contact-form-btn{
+  background-color: orange;
+  color: white;
+  letter-spacing: .1rem ;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/*section 5*/
+
+.section-5{
+  width: 100%;
+  height: 30vh;
+  background-color: darkcyan;
+  flex-direction: column;
+}
+
+.social-media{
+  margin-bottom: 5rem;
+}
+
+.social-media-link{
+  margin: 0 2rem;
+  padding: .7rem;
+  background-color: black;
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+.social-media-link i {
+  font-size: 3rem;
+  color: white;
+}
+
+.copyright{
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+/*Responsive*/
+
+/*giá trị trong breakpoit media có nghĩa là: khi kích thước
+màn hình đạt giá trị đó thì sẽ kích hoạt css breakpoint này để thực hiện
+các code css trong đó  nhằm responsive tùy thuộc vào cơ màn hình*/
+
+/*media breakpoint for reponsive*/
+@media(max-width: 1200px){
+  .services{
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .service{
+    margin: 3rem 2rem;
+  }
+
+  .section-4{
+    height: 80vh;
+  }
+}
+
+/*media breakpoint for reponsive*/
+@media(max-width: 800px){
+  .section-1-heading{
+    font-size: 4rem;
+  }
+
+  .progress-bar{
+    width: 50rem;
+  }
+}
+
+/*media breakpoint for reponsive*/
+@media(max-width: 600px){
+  section-1-heading{
+    font-size: 3rem;
+  }
+
+  .navbar-link{
+    margin: 0 2rem;
+    font-size: 1.5rem;
+  }
+
+  .section-2{
+    padding: 10rem;
+  }
+
+  .section-2-heading{
+    margin-bottom: 10rem;
+  }
+
+  .progress-bar{
+    width: 45rem;
+  }
+
+  .project-image{
+    width: 100%;
+  }
+
+  .contact-form{
+    width: 40rem;
+  }
+
+  .copyright{
+    width: 70%;
+  }
+}
+
+/*media breakpoint for reponsive*/
+  @media(max-width: 500px){
+    html{
+      font-size: 55%;
+    }
+}
+
+/*media breakpoint for reponsive*/
+@media(max-width: 450px){
+html{
+  font-size: 45%;
+}
+.section-1-heading{
+  font-size: 2.5rem;
+}
+navbar-link{
+  margin: 0 1.5rem;
+}
+
+.section-2-heading{
+  text-align: center;
+}
+.progress-bar{
+  width: 40rem;
+}
+}
+
+

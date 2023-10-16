@@ -16,11 +16,13 @@
 <body>
     <div class="container">
     <!--section 1-->
-    <section class="section-1 center">
+    <section class="section-1 center" id="section-1">
         <h1 class="section-1-heading">My portfolio</h1>
+
         <img src="Image/avatar.jpg" alt="My Avatar" class="person-img">
+        
         <h3 class="person-name">Tiến</h3>
-        <a href="#" class="section-1-btn">Projects</a> 
+        <a href="#section-3" class="section-1-btn">Projects</a> 
         <!--https://stackoverflow.com/questions/4855168/what-is-href-and-why-is-it-used-->
     </section>
 
@@ -68,7 +70,7 @@
               <h2 class="service-heading">Creative</h2>
             </div>
             <div class="service">
-              <i class="medium account-balance"></i>
+              <i class="fas fa-exclamation-circle"></i>
               <h2 class="service-heading">Problem Solving</h2>
             </div>
             <div class="service">
@@ -83,15 +85,16 @@
     </section>
 
     <!--section 3-->
-    <section class="section-3">
+    <section class="section-3" id="section-3">
       <h1 class="section-heading section-3-heading">My Project</h1>
       <div class="projects-wrapper center">
+        
         <div class="project">
           <div class="project-text">
             <h2 class="project-name">Calculator</h2>
             <h4 class="project-technologies">HTML + CSS + Javascript</h4>
           </div>
-          <img src="Image/calculator.PNG" alt="" class="project-image">
+          <img src="Image/Project_Calculator.PNG" alt="" class="project-image">
           <a href="https://cocomelonjuice.github.io/Calculator_app/" class="project-link" target="_blank">Go to project demo</a>
           <!--using _blank to open tab in new window-->
         </div>
@@ -101,7 +104,7 @@
             <h2 class="project-name">Todo App</h2>
             <h4 class="project-technologies">HTML + CSS + Javascript</h4>
           </div>
-          <img src="Image/todo.PNG" alt="" class="project-image">
+          <img src="Image/Project_Todo.PNG" alt="" class="project-image">
           <a href="https://cocomelonjuice.github.io/Todo_app/" class="project-link" target="_blank">Go to project demo</a>
           <!--using _blank to open tab in new window-->
         </div>
@@ -111,16 +114,54 @@
             <h2 class="project-name">Calculator</h2>
             <h4 class="project-technologies">HTML + CSS + Javascript+ Weather API</h4>
           </div>
-          <img src="Image/weather.PNG" alt="" class="project-image">
+          <img src="Image/Project_Weather.PNG" alt="" class="project-image">
           <a href="https://cocomelonjuice.github.io/Weather_app/" class="project-link" target="_blank">Go to project demo</a>
           <!--using _blank to open tab in new window-->
         </div>
       </div>
     </section>
 
+    <!--section 4-->
+    <section class="section-4" id="section-4">
+      <h1 class="section-heading section-4-heading">Contact</h1>
+      <form action="" class="contact-form center">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <input type="submit" value="Submit" class="contact-form-btn">
+      </form>
+    </section>
+
+    <!--section 5-->
+    <footer class="section-5 center">
+      <div class="social-media">
+        
+        <a href="https://www.facebook.com/juice.cocomelonjuice/" class="social-media-link">
+          <i class="fa fa-facebook-square"></i>
+        </a>
+
+        <a href="https://github.com/cocomelonjuice" class="social-media-link">
+          <i class="fa fa-github-square"></i>
+        </a>
+
+        <a href="https://www.instagram.com/tienminh00/" class="social-media-link">
+          <i class="fa-brands fa-square-instagram"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@TienNguyen-og5eo/featured" class="social-media-link">
+          <i class="fa fa-youtube-square"></i>
+        </a>
+      </div>
+
+      <p class="copyright">
+        Nguyen Minh Tien<!--&copy;-->, 2023.
+      </p>
+    </footer>
+
 
 </div>
 </body>
+<script src="https://kit.fontawesome.com/5539d2136b.js" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 
 </html>
